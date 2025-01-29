@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { NavBar } from '@molecules/NavBar';
 import "./styles/style.css"
 import { PlantPage } from '@pages/PlantPage';
+import { ProfilePage } from '@pages/ProfilePage';
 
 const queryClient = new QueryClient();
 
@@ -23,7 +24,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/plants" element={<PlantsPage />} />
 
           {/* Route pour la page pour consulter / modifier son profil */}
-          <Route path="/profile" element={<p>consulter mon profil</p>} />
+          <Route path="/profile" element={<ProfilePage />} />
 
           {/* Route pour la page pour consulter / modifier ses paramètres */}
           <Route path="/settings" element={<p>paramètres de l'app</p>} />
