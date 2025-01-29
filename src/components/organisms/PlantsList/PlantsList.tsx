@@ -4,8 +4,6 @@ import { Button } from "@atoms/Button";
 import { useNavigate } from "react-router-dom";
 import "./PlantsList.css"
 
-
-
 export const PlantsList: React.FC<IPlantsListProps> = ({plants}) => {
 
     const navigate = useNavigate()
@@ -20,7 +18,7 @@ export const PlantsList: React.FC<IPlantsListProps> = ({plants}) => {
                             <PlantCard
                                 plant={plant}
                                 buttons={[
-                                    <Button key={"En savoir plus"} label="En savoir plus" onClick={() => navigate(`/plant/${plant.id}`)}/>
+                                    <Button key={"Plus d'informations"} label="Plus d'informations" onClick={() => navigate(`/plant/${plant.id}`)}/>
                                 ]}
                             />
                         </li>

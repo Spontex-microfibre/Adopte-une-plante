@@ -1,10 +1,13 @@
 import { usePlants } from "@hooks/queries"
 import { Plants } from "@templates/Plants/Plants";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@store/useAuth";
 
 export const PlantsPage: React.FC = () => {
 
-    const { data, isFetching, isError, error } = usePlants();
+    const { data: plants, isFetching, isError, error } = usePlants();
+
+    const {userId: loggedUserId} = useAuth()
 
     const navigate = useNavigate();
 
@@ -16,6 +19,6 @@ export const PlantsPage: React.FC = () => {
     }
 
     return (
-        <Plants plants={data || []}/>
+        <Plants plants={plants?.filter(plant => plant.userId != loggedUserId) || []}/>
     )
 }
