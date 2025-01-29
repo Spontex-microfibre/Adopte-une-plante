@@ -1,6 +1,6 @@
 import { INavBarProps } from "./NavBar.props";
 import { Link } from 'react-router-dom';
-import { Avatar } from "@atoms/Avatar";
+import { Avatar } from "@atoms/index";
 import './NavBar.css';
 import logo from "@assets/images/logo.png"
 
