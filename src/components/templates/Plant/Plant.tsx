@@ -21,18 +21,11 @@ export const Plant: React.FC<IPlantProps> = ({plant}) => {
                 <h1>{name}</h1>
                 <p><strong>Type :</strong> {type}</p>
                 <p>{description}</p>
-                <p>
-                    {availableForAdoption ? "🌱 Disponible à l’adoption" : "❌ Déjà adoptée"}
-                </p>
-                <Button label="Qui est mon propriétaire ?" onClick={() => {
-                    //Si je vais sur le profil du propriétaire et que je suis ce guy, je vais direct sur ma page d'édition de profil
-                    if(loggedUserId == ownerId){
-                        navigate(`/profile`)
-                    }else{
-                        navigate(`/user/${ownerId}`)
-                    }
-                    
-                }}/>
+                <p>{availableForAdoption ? "🌱 Disponible à l’adoption" : "❌ Déjà adoptée"}</p>
+                {loggedUserId != ownerId && 
+                    <Button label="Qui est mon propriétaire ?" onClick={() => {navigate(`/user/${ownerId}`)}}/>
+                }
+                
             </div>
         </main>
     );
