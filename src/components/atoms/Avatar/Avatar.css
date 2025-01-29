@@ -1,0 +1,19 @@
+.avatar {
+    border-radius: calc(infinity * 1px);
+    object-fit: cover
+}
+
+.avatar-s {
+    width: 8px;
+    height: 8px;
+}
+
+.avatar-m {
+    width: 16px;
+    height: 16px;
+}
+
+.avatar-l {
+    width: 24px;
+    height: 24px;
+}
