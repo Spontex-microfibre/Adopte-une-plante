@@ -2,6 +2,7 @@
     margin: auto;
     padding: 40px;
     display: flex;
+    gap: 40px;
 }
 
 .user-informations {
@@ -9,4 +10,9 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    max-width: 400px;
+}
+
+.user-plants {
+    width: 100%;
 }

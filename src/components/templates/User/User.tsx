@@ -86,7 +86,7 @@ export const User: React.FC<IUserProps> = ({ user: initUserData, canEdit, plants
                 }
             </div>
             {/* à droite, section visualisation des plantes*/}
-            <div>
+            <div  className="user-plants">
                 <PlantsList plants={plants} />
             </div>
         </main>
