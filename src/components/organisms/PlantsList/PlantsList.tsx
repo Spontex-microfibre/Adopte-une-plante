@@ -20,7 +20,7 @@ export const PlantsList: React.FC<IPlantsListProps> = ({plants}) => {
                             <PlantCard
                                 plant={plant}
                                 buttons={[
-                                    <Button label="En savoir plus" onClick={() => navigate(`/plant/${plant.id}`)}/>
+                                    <Button key={"En savoir plus"} label="En savoir plus" onClick={() => navigate(`/plant/${plant.id}`)}/>
                                 ]}
                             />
                         </li>
