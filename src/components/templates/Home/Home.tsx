@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import "./Home.css"
 
 export const Home: React.FC = () => {
 
     return (
-        <main className="page-layout">
+        <main className="home-layout">
             <h1>Bienvenue sur "Adopte une Plante" !</h1>
             <p>
                 Vous en avez assez des plantes qui ne reçoivent pas assez d'amour ?

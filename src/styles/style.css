@@ -71,9 +71,3 @@ p {
     margin-bottom: 1rem;
     color: #555;
 }
-
-.page-layout {
-    max-width: 800px;
-    margin: auto;
-    padding: 40px;
-}

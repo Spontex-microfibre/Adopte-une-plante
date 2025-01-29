@@ -1,5 +1,5 @@
-import { Home } from '@pages/Home/Home';
-import { Plants } from '@pages/Plants/Plants';
+import { HomePage } from '@pages/HomePage';
+import { PlantsPage } from '@pages/PlantsPage';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -16,10 +16,10 @@ createRoot(document.getElementById('root')!).render(
         <NavBar />
         <Routes>
           {/* Route principale */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
 
           {/* Route pour la page pour consulter lees plantes en les triants */}
-          <Route path="/plants" element={<Plants />} />
+          <Route path="/plants" element={<PlantsPage />} />
 
           {/* Route pour la page pour consulter / modifier son profil */}
           <Route path="/profile" element={<p>consulter mon profil</p>} />
