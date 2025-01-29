@@ -3,6 +3,7 @@ import { IUserProps } from "./User.props";
 import { useState } from "react";
 import { PlantsList } from "@organisms/PlantsList";
 import "./User.css"
+import { useUpdateUser } from "@hooks/mutations";
 
 export const User: React.FC<IUserProps> = ({ user: initUserData, canEdit, plants }) => {
 
@@ -11,6 +12,8 @@ export const User: React.FC<IUserProps> = ({ user: initUserData, canEdit, plants
     const { firstname, lastname, age, avatar, location } = user
 
     const [isEditingUserData, setIsEditingUserData] = useState<boolean>(false)
+
+    const { mutate: updateUser,  } = useUpdateUser();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -68,7 +71,7 @@ export const User: React.FC<IUserProps> = ({ user: initUserData, canEdit, plants
                         <Button
                             label="Sauvegarder"
                             onClick={() => {
-                                console.log("todo : call api put user avec :", user)
+                                updateUser(user)
                                 setIsEditingUserData(false)
                             }}
                         />
