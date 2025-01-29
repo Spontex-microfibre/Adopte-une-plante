@@ -1,13 +1,11 @@
-import { Avatar, Button } from "@atoms/index";
+import { Avatar } from "@atoms/index";
 import { IPlantCardProps } from "./PlantCard.props";
 import "./PlantCard.css"
-import { useNavigate } from "react-router-dom";
 
-export const PlantCard: React.FC<IPlantCardProps> = ({ plant }) => {
+export const PlantCard: React.FC<IPlantCardProps> = ({ plant, buttons }) => {
 
-    const {id, image, name, description, type, availableForAdoption} = plant
+    const {image, name, description, type, availableForAdoption} = plant
 
-    const navigate = useNavigate()
 
     return (
       <article className="plantcard">
@@ -16,7 +14,7 @@ export const PlantCard: React.FC<IPlantCardProps> = ({ plant }) => {
           <p>{type}</p>
           <p>{description}</p>
           {availableForAdoption ? <p>dispo !</p> : <p>pas dispo :/</p>}
-          <Button label="En savoir plus" onClick={() => navigate(`/plant/${id}`)}/>
+          {buttons && buttons.map(button => button)}
       </article>
     );
   };
