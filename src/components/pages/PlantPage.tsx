@@ -1,31 +1,32 @@
-import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { usePlants } from "@store/queries";
+import { usePlantById } from "@store/queries";
 import { Plant } from "@templates/Plant/Plant";
 
 export const PlantPage: React.FC = () => {
-    const { id } = useParams<{ id: string }>();
-    const navigate = useNavigate();
-    const { data: plants, isFetching, isError, error } = usePlants();
+    const { id: idAsString } = useParams<{ id: string }>();
+    const id = Number(idAsString);
 
-    useEffect(() => {
-        if (isError) {
-            console.error(String(error));
-            navigate("/");
-        }
-    }, [isError, error, navigate]);
+    const navigate = useNavigate();
+
+    if (isNaN(id)) {
+        navigate("/");
+        return null;
+    }
+
+    const { data: plant, isFetching, isError, error } = usePlantById(id);
 
     if (isFetching) return <p>Ça charge, reste tranquille...</p>;
 
-    const plant = plants?.find((plant) => plant.id == Number(id));
+    if (isError) {
+        console.error(String(error));
+        navigate("/");
+        return null;
+    }
 
-    useEffect(() => {
-        if (!plant) {
-            navigate("/");
-        }
-    }, [plant, navigate]);
-
-    if (!plant) return null;
+    if (!plant) {
+        navigate("/");
+        return null;
+    }
 
     return <Plant plant={plant} />;
 };
