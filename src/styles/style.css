@@ -1,0 +1,79 @@
+/* Base Settings - Font Family and Size */
+:root {
+    --font-primary: 'Roboto', sans-serif;
+    /* Utilisation d'une police moderne */
+    --font-secondary: 'Georgia', serif;
+    /* Police pour les titres ou textes plus formels */
+    --font-size-base: 16px;
+    /* Taille de base pour les textes */
+    --line-height-base: 1.5;
+    /* Hauteur de ligne pour un meilleur confort de lecture */
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+}
+
+/* Application des polices à l'ensemble du site */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: #333;
+    /* Couleur de texte principale */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    /* Fond léger pour ne pas fatiguer les yeux */
+}
+
+/* Typo pour les titres */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    /* Police plus classique et formelle pour les titres */
+    color: #2c3e50;
+    /* Couleur des titres */
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-bold);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-normal);
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-normal);
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: var(--font-weight-normal);
+}
+
+h6 {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-normal);
+}
+
+/* Paragraphes */
+p {
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.page-layout {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+}
