@@ -1,4 +1,4 @@
-export interface plant {
+export interface IPlant {
     id: number
     type: string
     name: string
