@@ -3,5 +3,6 @@ export interface IInputProps {
     name: string,
     value: string | number
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-    placeholder: string
+    placeholder: string,
+    disabled?: boolean
 }

@@ -1,6 +1,6 @@
 import { IInputProps } from "./Input.props";
 
-export const Input: React.FC<IInputProps> = ({value, onChange, type = "text", placeholder, name}) => {
+export const Input: React.FC<IInputProps> = ({value, onChange, type = "text", placeholder, name, disabled}) => {
 
     return (
       <input
@@ -9,6 +9,7 @@ export const Input: React.FC<IInputProps> = ({value, onChange, type = "text", pl
         onChange={onChange}
         name={name}
         placeholder={placeholder}
+        disabled={disabled}
       />
 
     )
