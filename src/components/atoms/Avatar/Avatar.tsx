@@ -1,4 +1,5 @@
 import { IAvatarProps } from "./Avatar.props";
+import "./Avatar.css"
 
 export const Avatar: React.FC<IAvatarProps> = ({ imageUrl, altText, size = "medium" }) => {
 
