@@ -1,0 +1,1 @@
+en gros c une appli où t'échange des livre, en gros c ça. ptetre yaura un twist mais pour l'instant c l'idée
