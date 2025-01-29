@@ -2,6 +2,7 @@ import { Avatar, Button, Input } from "@atoms/index";
 import { IUserProps } from "./User.props";
 import { useState } from "react";
 import { PlantsList } from "@organisms/PlantsList";
+import "./User.css"
 
 export const User: React.FC<IUserProps> = ({ user: initUserData, canEdit, plants }) => {
 
@@ -20,36 +21,10 @@ export const User: React.FC<IUserProps> = ({ user: initUserData, canEdit, plants
     }
 
     return (
-        <main>
+        <main className="user-layout">
             {/* à gauche, section visualisation du profil*/}
-            <div>
-                {isEditingUserData
-                    ? 
-                    <>
-                        <Button 
-                            label="Annuler"
-                            onClick={() => {
-                                setUser(initUserData)
-                                setIsEditingUserData(false)
-                            }}
-                        />
-                        <Button
-                            label="Sauvegarder"
-                            onClick={() => {
-                                console.log("todo : call api put user")
-                                setIsEditingUserData(false)
-                            }}
-                        />
-                    </>
-                    : canEdit && <Button
-                        label="Editer"
-                        onClick={() => {
-                            setIsEditingUserData(true)
-                        }}
-                    />
-                    
-                }
-                <Avatar imageUrl={avatar} altText="Avatar" />
+            <div className="user-informations">
+                <Avatar imageUrl={avatar} altText="Avatar" size="large"/>
                 <Input
                     name="firstname"
                     value={firstname}
@@ -80,6 +55,32 @@ export const User: React.FC<IUserProps> = ({ user: initUserData, canEdit, plants
                     placeholder="Localisation"
                     disabled={!isEditingUserData}
                 />
+                {isEditingUserData
+                    ? 
+                    <>
+                        <Button 
+                            label="Annuler"
+                            onClick={() => {
+                                setUser(initUserData)
+                                setIsEditingUserData(false)
+                            }}
+                        />
+                        <Button
+                            label="Sauvegarder"
+                            onClick={() => {
+                                console.log("todo : call api put user avec :", user)
+                                setIsEditingUserData(false)
+                            }}
+                        />
+                    </>
+                    : canEdit && <Button
+                        label="Editer"
+                        onClick={() => {
+                            setIsEditingUserData(true)
+                        }}
+                    />
+                    
+                }
             </div>
             {/* à droite, section visualisation des plantes*/}
             <div>

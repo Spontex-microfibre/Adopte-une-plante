@@ -1,0 +1,12 @@
+.user-layout {
+    margin: auto;
+    padding: 40px;
+    display: flex;
+}
+
+.user-informations {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
