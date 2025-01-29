@@ -13,7 +13,7 @@ export const NavBar: React.FC<INavBarProps> = () => {
             <nav>
                 <ul className="navbar-navlist">
                     <li>
-                        <Link className="navbar-navlink" to="/">Accueil</Link>
+                        <Link className="navbar-navlink" to="/plants">Plantes</Link>
                     </li>
                     <li>
                         <Link className="navbar-navlink" to="/profile">Mon profil</Link>

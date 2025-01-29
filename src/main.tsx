@@ -1,9 +1,11 @@
-import { Home } from '@pages/Home';
+import { Home } from '@pages/Home/Home';
+import { Plants } from '@pages/Plants/Plants';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { NavBar } from '@molecules/NavBar';
+import "./styles/style.css"
 
 const queryClient = new QueryClient();
 
@@ -15,7 +17,14 @@ createRoot(document.getElementById('root')!).render(
         <Routes>
           {/* Route principale */}
           <Route path="/" element={<Home />} />
+
+          {/* Route pour la page pour consulter lees plantes en les triants */}
+          <Route path="/plants" element={<Plants />} />
+
+          {/* Route pour la page pour consulter / modifier son profil */}
           <Route path="/profile" element={<p>consulter mon profil</p>} />
+
+          {/* Route pour la page pour consulter / modifier ses paramètres */}
           <Route path="/settings" element={<p>paramètres de l'app</p>} />
 
           {/* Route pour la page de détails d'une plante */}
