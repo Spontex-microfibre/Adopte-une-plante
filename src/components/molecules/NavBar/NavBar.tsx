@@ -3,10 +3,25 @@ import { Link } from 'react-router-dom';
 import { Avatar } from "@atoms/index";
 import './NavBar.css';
 import logo from "@assets/images/logo.png"
+import { useEffect, useRef } from "react";
 
 export const NavBar: React.FC<INavBarProps> = () => {
+
+    const navbarRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const updatePadding = () => {
+            if (navbarRef.current) {
+                document.body.style.paddingTop = `${navbarRef.current.offsetHeight}px`;
+            }
+        };
+
+        updatePadding(); // Appliquer au premier rendu
+
+    }, []);
+
     return (
-        <header className="navbar">
+        <header className="navbar" ref={navbarRef}>
             <Link className="navbar-navlink" to="/">
                 <Avatar imageUrl={logo} altText="Logo" size="large" />
             </Link>

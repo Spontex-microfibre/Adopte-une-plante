@@ -1,13 +1,18 @@
 .navbar {
     display: flex;
-    gap: 40px;
-    padding: 20px;
+    gap: 80px;
+    padding: 10px 20px;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
 }
 
 .navbar-navlist {
     display: flex;
-    gap: 20px;
+    gap: 40px;
 }
 
 .navbar-navlink {
@@ -17,5 +22,5 @@
   }
   
   .navbar-navlink:hover {
-    color: #ff6347;
+    color: #2c9765;
   }
