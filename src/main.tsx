@@ -34,7 +34,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/user/:id" element={<p>consulter détails utilisateur</p>} />
 
           {/* Route par défaut */}
-          <Route path="*" element={<p>home</p>} />
+          <Route path="*" element={<p>404 looser</p>} />
         </Routes>
       </Router>
     </QueryClientProvider>
