@@ -1,18 +1,14 @@
-import { Avatar } from "@atoms/Avatar/Avatar";
+import { Avatar } from "@atoms/Avatar";
 import { IPlantCardProps } from "./PlantCard.props";
+import "./PlantCard.css"
 
-export const PlantCard: React.FC<IPlantCardProps> = ({ plant, owner }) => {
+export const PlantCard: React.FC<IPlantCardProps> = ({ plant }) => {
 
     const {image, name, description, type, availableForAdoption} = plant
-    const {firstname, avatar} = owner
 
     return (
-      <article>
-        <img src={image} alt={name} />
-        <aside>
-            <span>{firstname}</span>
-            <Avatar imageUrl={avatar} altText="Avatar du propriétaire"/>
-        </aside>
+      <article className="plantcard">
+        <Avatar imageUrl={image} altText="Image de la plante" size="large"/>
           <h3>{name}</h3>
           <p>{type}</p>
           <p>{description}</p>
