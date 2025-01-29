@@ -8,6 +8,7 @@ import { NavBar } from '@molecules/NavBar';
 import "./styles/style.css"
 import { PlantPage } from '@pages/PlantPage';
 import { ProfilePage } from '@pages/ProfilePage';
+import { UserPage } from '@pages/UserPage';
 
 const queryClient = new QueryClient();
 
@@ -33,7 +34,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/plant/:id" element={<PlantPage />} />
 
           {/* Route pour la page de détails d'une utilisateurs */}
-          <Route path="/user/:id" element={<p>consulter détails utilisateur</p>} />
+          <Route path="/user/:id" element={<UserPage />} />
 
           {/* Route par défaut */}
           <Route path="*" element={<p>404 looser</p>} />
