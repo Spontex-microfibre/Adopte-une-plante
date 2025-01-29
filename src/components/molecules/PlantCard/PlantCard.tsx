@@ -16,7 +16,7 @@ export const PlantCard: React.FC<IPlantCardProps> = ({ plant }) => {
           <p>{type}</p>
           <p>{description}</p>
           {availableForAdoption ? <p>dispo !</p> : <p>pas dispo :/</p>}
-          <Button label="En savoir plus" onClick={() => navigate(`/plants/${id}`)}/>
+          <Button label="En savoir plus" onClick={() => navigate(`/plant/${id}`)}/>
       </article>
     );
   };
