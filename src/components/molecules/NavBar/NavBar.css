@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    align-items: center;
+}
+
+.navbar-navlist {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-navlink {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .navbar-navlink:hover {
+    color: #ff6347;
+  }
