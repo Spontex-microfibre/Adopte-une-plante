@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { usePlantById } from "@store/queries";
+import { usePlantById } from "@hooks/queries";
 import { Plant } from "@templates/Plant/Plant";
 
 export const PlantPage: React.FC = () => {

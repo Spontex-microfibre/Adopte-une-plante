@@ -1,5 +1,5 @@
 import { User } from "@templates/User";
-import { usePlantsByUserId, useUserById } from "@store/queries";
+import { usePlantsByUserId, useUserById } from "@hooks/queries";
 
 export const ProfilePage: React.FC = () => {
     const id = 1; // Pas encore d'auth, on considère qu'on est l'utilisateur d'id 1 par défaut

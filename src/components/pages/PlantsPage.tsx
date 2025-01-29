@@ -1,4 +1,4 @@
-import { usePlants } from "@store/queries"
+import { usePlants } from "@hooks/queries"
 import { Plants } from "@templates/Plants/Plants";
 import { useNavigate } from "react-router-dom";
 
