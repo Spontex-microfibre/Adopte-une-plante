@@ -9,7 +9,7 @@
 - **Visualisation d'un catalogue de plantes** : Les utilisateurs peuvent consulter une liste de plantes.
 - **Ajouter en favoris** : Les utilisateurs peuvent ajouter une plante à leurs favoris.
 - **Consulter détails plantes** : Les utilisateurs peuvent consulter les détails d'une plantes en cliquant dessus.
-- **Supprimer ses plantes** : Les utilisateurs peuvent supprimer les plantes qui leurs appartiennent.
+- **Supprimer ses plantes** : Les utilisateurs peuvent supprimer les plantes qui leurs appartiennent. __On peut seulement supprimer, pas en créer, donc attention de pas tout vider :)__
 - **Consulter profils utilisateurs** : Les utilisateurs peuvent consulter le profil d'autre utilisateurs pour voir toutes leurs plantes.
 - **Gestion du profil utilisateur** : Les utilisateurs peuvent mettre à jour leurs informations personnelles (nom, localisation, etc.) __Par défaut, on se connecte en tant qu'user d'id 1, aucun système d'authentification n'est en place__
 
