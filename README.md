@@ -9,7 +9,8 @@
 - **Visualisation d'un catalogue de plantes** : Les utilisateurs peuvent consulter une liste de plantes.
 - **Ajouter en favoris** : Les utilisateurs peuvent ajouter une plante à leurs favoris.
 - **Consulter détails plantes** : Les utilisateurs peuvent consulter les détails d'une plantes en cliquant dessus.
-- **Consulter détails plantes** : Les utilisateurs peuvent consulter le profil d'autre utilisateurs pour voir toutes leurs plantes.
+- **Supprimer ses plantes** : Les utilisateurs peuvent supprimer les plantes qui leurs appartiennent.
+- **Consulter profils utilisateurs** : Les utilisateurs peuvent consulter le profil d'autre utilisateurs pour voir toutes leurs plantes.
 - **Gestion du profil utilisateur** : Les utilisateurs peuvent mettre à jour leurs informations personnelles (nom, localisation, etc.) __Par défaut, on se connecte en tant qu'user d'id 1, aucun système d'authentification n'est en place__
 
 ## Technologies
@@ -21,9 +22,19 @@
 - **Axios** : Pour effectuer des requêtes HTTP vers l'API.
 - **Vite** : Pour le bundling et le développement rapide.
 - **Axios** : Pour les requêtes API.
-- **React Icons** : Pour les Icones
-- **React Spinners** : Pour les roues de chargements
-- **Mockapi.io** : Pour simuler un Back End
+- **React Icons** : Pour les Icones.
+- **React Spinners** : Pour les roues de chargements.
+- **Mockapi.io** : Pour l'API
+
+## Amélioration à faire
+- **Système de filtre pour les plantes (par type, nom, localisation, ...)**
+- **Ajouter et modifier des plantes**
+- **UI/UX upgrade**
+
+- **Système de messagerie**
+- **Persistance des favoris**
+- **Page d'identification / création de compte**
+
 
 
 ## Installation
