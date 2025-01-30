@@ -1,6 +1,6 @@
 import { Avatar, Button, Input } from "@atoms/index";
 import { IUserInfosProps } from "./UserInfos.props";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./UserInfos.css"
 import { useUpdateUser } from "@hooks/mutations";
 
@@ -8,11 +8,16 @@ export const UserInfos: React.FC<IUserInfosProps> = ({ user: initUserData, canEd
 
 
     const [user, setUser] = useState(initUserData)
+
     const { firstname, lastname, age, avatar, location } = user
 
     const [isEditingUserData, setIsEditingUserData] = useState<boolean>(false)
 
     const { mutate: updateUser, } = useUpdateUser();
+
+    useEffect(() => {
+        setUser(initUserData);
+    }, [initUserData]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
