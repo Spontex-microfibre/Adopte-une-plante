@@ -5,10 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { useDeletePlant } from "@hooks/mutations";
 import "./PlantsList.css"
 import { FavoriteButton } from "@molecules/FavoriteButton";
+import { useFavorites } from "@store/useFavorites";
 
 export const PlantsList: React.FC<IPlantsListProps> = ({plants, canEdit = false}) => {
 
     const navigate = useNavigate()
+
+    const {toggleFavorite} = useFavorites()
 
     const { mutate: deletePlant, } = useDeletePlant();
 
@@ -24,7 +27,10 @@ export const PlantsList: React.FC<IPlantsListProps> = ({plants, canEdit = false}
                         ] 
                         : [
                             <Button key={"Plus d'informations"} label="Plus d'informations" onClick={() => navigate(`/plants/${plant.id}`)}/>,
-                            <FavoriteButton onClick={() => {console.log("favorite click: "+plant.id)}} />
+                            <FavoriteButton onClick={() => {
+                                console.log("favorite click: "+plant.id)
+                                toggleFavorite(plant)
+                            }} />
                         ]
                     return (
                         <li key={plant.id}>

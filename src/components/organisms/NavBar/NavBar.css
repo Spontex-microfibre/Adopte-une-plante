@@ -1,13 +1,25 @@
 .navbar {
     display: flex;
-    gap: 80px;
     padding: 10px 20px;
     align-items: center;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #ffffff;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
 }
 
 .navbar-navlist {

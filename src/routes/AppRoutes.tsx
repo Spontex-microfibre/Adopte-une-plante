@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { UsersRoutes } from "./UsersRoutes"
 import { PlantsRoutes } from "./PlantsRoutes"
 import { HomePage } from "@pages/HomePage";
-import { NavBar } from "@molecules/NavBar";
+import { NavBar } from "@organisms/NavBar";
 
 export const AppRoutes = () => {
     return (
