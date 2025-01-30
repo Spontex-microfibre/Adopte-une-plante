@@ -10,7 +10,9 @@ export const User: React.FC<IUserProps> = ({ user: initUserData, canEdit, plants
             <div className="user-informations">
                 <UserInfos user={initUserData} canEdit={canEdit}/>
             </div>
+            <hr/>
             <div className="user-plants">
+                <h2>🍀 Les plantes de {initUserData.firstname} 🍀</h2>
                 <PlantsList plants={plants} canEdit={canEdit}/>
             </div>
         </main>

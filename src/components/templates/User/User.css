@@ -2,13 +2,25 @@
     margin: auto;
     padding: 40px;
     display: flex;
-    gap: 40px;
+    gap: 80px;
+}
+
+@media (max-width: 768px) {
+    .user-layout {
+        flex-direction: column;
+    }
 }
 
 .user-informations {
-    max-width: 400px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px;
 }
 
 .user-plants {
     width: 100%;
+}
+
+.user-plants > h2 {
+    text-align: center;
 }
