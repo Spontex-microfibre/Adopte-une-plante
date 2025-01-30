@@ -6,7 +6,7 @@ import { FavoritesPage } from "@pages/FavoritesPage";
 export const PlantsRoutes: React.FC = () => {
   return (
     <Routes>
-      <Route index element={<PlantsPage />} />
+      <Route path="/" element={<PlantsPage />} />
       <Route path=":id" element={<PlantDetailsPage />} />
       <Route path="create" element={<p>PlantForm</p>} />
       <Route path="edit/:id" element={<p>PlantForm</p>} />

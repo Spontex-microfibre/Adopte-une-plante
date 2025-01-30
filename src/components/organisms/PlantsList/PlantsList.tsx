@@ -23,11 +23,11 @@ export const PlantsList: React.FC<IPlantsListProps> = ({plants, canEdit = false}
                     //Mon composants card permet de lui envoyer les boutons qu'il doit afficher, je les génère dynamiquement selon mes droits d'édition sur la card
                     const buttonsToDisplay: React.ReactNode[] = canEdit
                         ? [
-                            <Button key={"Modifier"} label="Modifier" onClick={() => navigate(`/plants/edit/${plant.id}`)}/>,
+                            <Button key={"Modifier"} label="Modifier" onClick={() => navigate(`/Adopte-une-plante/plants/edit/${plant.id}`)}/>,
                             <Button key={"Supprimer"} label="Supprimer" onClick={() => deletePlant(plant.id)}/>,
                         ] 
                         : [
-                            <Button key={"Plus d'informations"} label="Plus d'informations" onClick={() => navigate(`/plants/${plant.id}`)}/>,
+                            <Button key={"Plus d'informations"} label="Plus d'informations" onClick={() => navigate(`/Adopte-une-plante/plants/${plant.id}`)}/>,
                             <FavoriteButton isFavorite={!!favoritesPlants.find(favoriteplant => plant.id == favoriteplant.id )} onClick={() => {
                                 console.log("favorite click: "+plant.id)
                                 toggleFavorite(plant)

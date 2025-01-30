@@ -31,7 +31,7 @@ export const Plant: React.FC<IPlantProps> = ({ plant, isFetching }) => {
                 <Button
                     label="Qui est mon propriétaire ?"
                     onClick={() => {
-                        navigate(`/users/${ownerId}`)
+                        navigate(`/Adopte-une-plante/users/${ownerId}`)
                     }}
                 />
             </footer>
