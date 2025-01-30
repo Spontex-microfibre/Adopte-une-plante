@@ -11,14 +11,8 @@ export function useUpdateUser() {
     return useMutation({
         mutationFn: updateUser,
         onSuccess: (updatedUser: IUser) => {
-            const userId = updatedUser.id
-            const previousUsers = queryClient.getQueryData(["userById", userId]) as IUser[]
-            queryClient.setQueryData(
-                ["userById", userId],
-                previousUsers?.map((previousUser) => 
-                    previousUser.id === userId ? { ...previousUser, ...updatedUser } : previousUser
-                )
-            );
+            const userId = Number(updatedUser.id)
+            queryClient.invalidateQueries({ queryKey: ["userById", userId] })
         }
     })
 }
