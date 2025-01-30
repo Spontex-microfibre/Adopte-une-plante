@@ -2,11 +2,14 @@ import { PlantCard } from "@molecules/PlantCard";
 import { IPlantsListProps } from "./PlantsList.props";
 import { Button } from "@atoms/Button";
 import { useNavigate } from "react-router-dom";
+import { useDeletePlant } from "@hooks/mutations";
 import "./PlantsList.css"
 
 export const PlantsList: React.FC<IPlantsListProps> = ({plants, canEdit = false}) => {
 
     const navigate = useNavigate()
+
+    const { mutate: deletePlant, } = useDeletePlant();
 
     return (
         <>
@@ -16,7 +19,7 @@ export const PlantsList: React.FC<IPlantsListProps> = ({plants, canEdit = false}
                     const buttonsToDisplay: React.ReactNode[] = canEdit
                         ? [
                             <Button key={"Modifier"} label="Modifier" onClick={() => navigate(`/plants/edit/${plant.id}`)}/>,
-                            <Button key={"Supprimer"} label="Supprimer" onClick={() => console.log("delete" + plant.id)}/>
+                            <Button key={"Supprimer"} label="Supprimer" onClick={() => deletePlant(plant.id)}/>
                         ] 
                         : [
                             <Button key={"Plus d'informations"} label="Plus d'informations" onClick={() => navigate(`/plants/${plant.id}`)}/>

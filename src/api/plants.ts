@@ -22,3 +22,8 @@ export const getPlantsByUserId = async (userId: number) => {
     const response = await axios.get<IPlant[]>(`${API_URL}plants?userId=${userId}`)
     return response.data;
 }
+
+export const deletePlant = async (id: number) => {
+    const response = await axios.delete<IPlant>(`${API_URL}plants/${id}`)
+    return response.data
+}

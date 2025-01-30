@@ -35,7 +35,7 @@ export function usePlantById(plantId: number) {
 export function usePlantsByUserId(userId: number) {
     return useQuery({
         queryFn: () => getPlantsByUserId(userId), // Fonction de fetch pour récupérer l'utilisateur par ID
-        queryKey: ["plantByUserId", userId], // Utilise l'ID de l'utilisateur pour la clef de cache
+        queryKey: ["plantsByUserId", userId], // Utilise l'ID de l'utilisateur pour la clef de cache
         staleTime: 1000 * 60 * 5, // Garde les données valides pendant 5 minutes
         refetchOnWindowFocus: false, // Empêche le refetch automatique quand on revient sur la page
         refetchOnMount: false, // Empêche un refetch automatique au montage si les données existent déjà
