@@ -39,7 +39,7 @@ export const UserDetailsPage: React.FC = () => {
     }
 
     if (isUserLoading || isPlantsLoading) {
-        return <Loader loading/>
+        return <Loader loading paddingTop="200px"/>
     }
 
     return (
