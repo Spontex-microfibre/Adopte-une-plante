@@ -15,22 +15,26 @@ export const Plant: React.FC<IPlantProps> = ({ plant, isFetching }) => {
     const { type, name, description, image, userId: ownerId, availableForAdoption } = plant
 
     return (
-        <main className="plant-layout">
-            <div>
+        <article className="plant-layout">
+            <header className="plant-header">
                 <img src={image} alt={name} />
-            </div>
-            <div>
-                <h1>{name}</h1>
-                <p><strong>Type :</strong> {type}</p>
+                <div className="plant-header-right">
+                    <h1>{name}</h1>
+                    <p><strong>Type :</strong> {type}</p>
+                </div>
+            </header>
+            <main className="plant-content">
                 <p>{description}</p>
-                <p>{availableForAdoption ? "🌱 Disponible à l’adoption" : "❌ Déjà adoptée"}</p>
+                <p className="plant-content-adoptable">{availableForAdoption ? "🌱 Disponible à l’adoption" : "❌ Déjà adoptée"}</p>
+            </main>
+            <footer className="plant-footer">
                 <Button
                     label="Qui est mon propriétaire ?"
                     onClick={() => {
                         navigate(`/users/${ownerId}`)
                     }}
                 />
-            </div>
-        </main>
+            </footer>
+        </article>
     )
 }
