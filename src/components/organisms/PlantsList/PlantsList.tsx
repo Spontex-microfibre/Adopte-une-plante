@@ -4,6 +4,7 @@ import { Button } from "@atoms/Button";
 import { useNavigate } from "react-router-dom";
 import { useDeletePlant } from "@hooks/mutations";
 import "./PlantsList.css"
+import { FavoriteButton } from "@molecules/FavoriteButton";
 
 export const PlantsList: React.FC<IPlantsListProps> = ({plants, canEdit = false}) => {
 
@@ -19,10 +20,11 @@ export const PlantsList: React.FC<IPlantsListProps> = ({plants, canEdit = false}
                     const buttonsToDisplay: React.ReactNode[] = canEdit
                         ? [
                             <Button key={"Modifier"} label="Modifier" onClick={() => navigate(`/plants/edit/${plant.id}`)}/>,
-                            <Button key={"Supprimer"} label="Supprimer" onClick={() => deletePlant(plant.id)}/>
+                            <Button key={"Supprimer"} label="Supprimer" onClick={() => deletePlant(plant.id)}/>,
                         ] 
                         : [
-                            <Button key={"Plus d'informations"} label="Plus d'informations" onClick={() => navigate(`/plants/${plant.id}`)}/>
+                            <Button key={"Plus d'informations"} label="Plus d'informations" onClick={() => navigate(`/plants/${plant.id}`)}/>,
+                            <FavoriteButton onClick={() => {console.log("favorite click: "+plant.id)}} />
                         ]
                     return (
                         <li key={plant.id}>
