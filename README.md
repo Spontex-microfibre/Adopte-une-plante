@@ -27,10 +27,14 @@
 - **Mockapi.io** : Pour l'API
 
 ## Amélioration à faire
-- **Système de filtre pour les plantes (par type, nom, localisation, ...)**
+Primo :
 - **Ajouter et modifier des plantes**
 - **UI/UX upgrade**
 
+Secondo :
+- **Système de filtre pour les plantes (par type, nom, localisation, ...)**
+
+Pour le kiff : 
 - **Système de messagerie**
 - **Persistance des favoris**
 - **Page d'identification / création de compte**
