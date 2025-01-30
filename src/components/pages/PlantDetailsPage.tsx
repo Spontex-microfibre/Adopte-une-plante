@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { usePlantById } from "@hooks/queries";
 import { Plant } from "@templates/Plant/Plant";
+import { IPlant } from "types/plant";
 
 export const PlantDetailsPage: React.FC = () => {
     const { id: idAsString } = useParams<{ id: string }>();
@@ -8,14 +9,8 @@ export const PlantDetailsPage: React.FC = () => {
 
     const navigate = useNavigate();
 
-    if (isNaN(id)) {
-        navigate("/");
-        return null;
-    }
 
     const { data: plant, isFetching, isError, error } = usePlantById(id);
-
-    if (isFetching) return <p>Ça charge, reste tranquille...</p>;
 
     if (isError) {
         console.error(String(error));
@@ -23,10 +18,5 @@ export const PlantDetailsPage: React.FC = () => {
         return null;
     }
 
-    if (!plant) {
-        navigate("/");
-        return null;
-    }
-
-    return <Plant plant={plant} />;
+    return <Plant plant={plant ?? {} as IPlant} isFetching={isFetching}/>;
 };

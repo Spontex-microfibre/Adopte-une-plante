@@ -10,7 +10,7 @@ export const Plants: React.FC<IPlantsProps> = ({ plants, isFetching }) => {
             <h1>Une plante vous intéresse ?</h1>
             <p>Cliquez dessus pour en savoir d'avantage !</p>
             {isFetching
-                ? <Loader size={100} loading={isFetching} />
+                ? <Loader paddingTop={"100px"} loading={isFetching} />
                 : <PlantsList plants={plants} />
             }
         </main>
