@@ -23,7 +23,7 @@ export const Home: React.FC = () => {
                 </p>
 
                 <div>
-                    <Link to="/plants">
+                    <Link to="/Adopte-une-plante/plants">
                         Voir toutes les plantes disponibles
                     </Link>
                 </div>
