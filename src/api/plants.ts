@@ -5,7 +5,6 @@ const API_URL = "https://6799e2df747b09cdccccdd02.mockapi.io/api/"
 
 export const getPlants = async () => {
     const response = await axios.get<IPlant[]>(`${API_URL}plants`)
-    // await new Promise(resolve => setTimeout(resolve, 3000));
     return response.data;
 }
 
