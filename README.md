@@ -1,17 +1,16 @@
-# Adopt a Plant
+# Adopte une Plante
 
 ## Description
 
-**Adopt a Plant** est une application permettant aux utilisateurs d'adopter des plantes. Les utilisateurs peuvent naviguer à travers une collection de plantes disponibles à l'adoption, marquer leurs plantes favorites, et obtenir des informations détaillées sur chaque plante. L'application permet également de gérer les informations des utilisateurs, comme leur localisation et leurs plantes favorites.
+**Adopte une Plante** est une application permettant aux utilisateurs d'adopter des plantes. Les utilisateurs peuvent naviguer à travers une collection de plantes disponibles à l'adoption, marquer leurs plantes favorites, et obtenir des informations détaillées sur chaque plante ainsi que leurs propriétaires.
 
 ## Fonctionnalités
 
-- **Navigation des plantes** : Les utilisateurs peuvent consulter une liste de plantes disponibles à l'adoption.
-- **Adopter une plante** : Les utilisateurs peuvent adopter une plante et l'ajouter à leur collection.
-- **Favoris** : Les utilisateurs peuvent marquer leurs plantes favorites pour un accès rapide.
-- **Gestion du profil utilisateur** : Les utilisateurs peuvent mettre à jour leurs informations personnelles (nom, localisation, etc.).
-- **Recherche et filtres** : Les utilisateurs peuvent rechercher des plantes et appliquer des filtres pour affiner les résultats.
-- **Responsive Design** : L'application est optimisée pour une utilisation sur mobile, tablette et bureau.
+- **Visualisation d'un catalogue de plantes** : Les utilisateurs peuvent consulter une liste de plantes.
+- **Ajouter en favoris** : Les utilisateurs peuvent ajouter une plante à leurs favoris.
+- **Consulter détails plantes** : Les utilisateurs peuvent consulter les détails d'une plantes en cliquant dessus.
+- **Consulter détails plantes** : Les utilisateurs peuvent consulter le profil d'autre utilisateurs pour voir toutes leurs plantes.
+- **Gestion du profil utilisateur** : Les utilisateurs peuvent mettre à jour leurs informations personnelles (nom, localisation, etc.) __Par défaut, on se connecte en tant qu'user d'id 1, aucun système d'authentification n'est en place__
 
 ## Technologies
 
@@ -21,7 +20,11 @@
 - **Zustand** : Pour la gestion de l'état global (ex. : les plantes favorites).
 - **Axios** : Pour effectuer des requêtes HTTP vers l'API.
 - **Vite** : Pour le bundling et le développement rapide.
-- **GitHub Pages** : Pour le déploiement de l'application en ligne.
+- **Axios** : Pour les requêtes API.
+- **React Icons** : Pour les Icones
+- **React Spinners** : Pour les roues de chargements
+- **Mockapi.io** : Pour simuler un Back End
+
 
 ## Installation
 
@@ -32,9 +35,18 @@
 ### Installation du projet
 
 1. Clonez le dépôt sur votre machine locale :
-   ```bash
-   git clone https://github.com/Spontex-microfibre/Adopte-une-plante.git
-   cd Adopte-une-plante
-   npm install
-   npm run dev
-   ```
+```bash
+    git clone https://github.com/Spontex-microfibre/Adopte-une-plante.git
+```
+2. Déplacer vous dans le dossier de l'application
+```bash
+    cd Adopte-une-plante
+```
+3. Installer les dépendances
+```bash
+    npm install
+```
+4. Déployez le projet localement
+```bash
+    npm run dev
+```
