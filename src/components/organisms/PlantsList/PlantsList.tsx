@@ -11,7 +11,7 @@ export const PlantsList: React.FC<IPlantsListProps> = ({plants, canEdit = false}
 
     const navigate = useNavigate()
 
-    const {toggleFavorite} = useFavorites()
+    const {toggleFavorite, favoritesPlants} = useFavorites()
 
     const { mutate: deletePlant, } = useDeletePlant()
 
@@ -28,7 +28,7 @@ export const PlantsList: React.FC<IPlantsListProps> = ({plants, canEdit = false}
                         ] 
                         : [
                             <Button key={"Plus d'informations"} label="Plus d'informations" onClick={() => navigate(`/plants/${plant.id}`)}/>,
-                            <FavoriteButton onClick={() => {
+                            <FavoriteButton isFavorite={!!favoritesPlants.find(favoriteplant => plant.id == favoriteplant.id )} onClick={() => {
                                 console.log("favorite click: "+plant.id)
                                 toggleFavorite(plant)
                             }} />

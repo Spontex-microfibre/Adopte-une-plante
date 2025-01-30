@@ -6,4 +6,6 @@ export interface IIconButtonProps {
     color?: string
     size?: string | number
     disabled?: boolean
+    onMouseEnter?: () => void
+    onMouseLeave?: () => void
   }

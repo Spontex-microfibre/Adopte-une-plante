@@ -1,11 +1,11 @@
 import { INavBarProps } from "./NavBar.props";
 import { Link } from 'react-router-dom';
-import { Avatar } from "@atoms/index";
+import { Avatar, IconButton } from "@atoms/index";
 import './NavBar.css';
 import logo from "@assets/images/logo.png"
 import { useEffect, useRef } from "react";
 import { useAuth } from "@store/useAuth";
-import { FavoriteButton } from "@molecules/FavoriteButton";
+import { FaHeart } from "react-icons/fa";
 
 export const NavBar: React.FC<INavBarProps> = () => {
 
@@ -47,7 +47,7 @@ export const NavBar: React.FC<INavBarProps> = () => {
 
             <div className="navbar-right">
                 <Link to="/plants/favorites">
-                    <FavoriteButton size="40px" onClick={() => {}} />
+                    <IconButton Icon={FaHeart} color="red" size={40} onClick={() => {}}/>
                 </Link>
             </div>
         </header>
