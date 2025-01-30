@@ -6,7 +6,7 @@ export function usePlants() {
     return useQuery({
         queryFn: getPlants,
         queryKey: ["plants"],
-        staleTime: 1000 * 60 * 5,
+        staleTime: 1000 * 60 * 5, //5min avant de refetch automatiquement
         refetchOnWindowFocus: false,
         refetchOnMount: false,
     })
