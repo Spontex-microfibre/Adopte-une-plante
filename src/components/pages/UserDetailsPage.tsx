@@ -1,14 +1,24 @@
 import { User } from "@templates/User";
 import { usePlantsByUserId, useUserById } from "@hooks/queries";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAuth } from "@store/useAuth";
 
-export const ProfilePage: React.FC = () => {
-    const id = 1; // Pas encore d'auth, on considère qu'on est l'utilisateur d'id 1 par défaut
+export const UserDetailsPage: React.FC = () => {
+    const {id} = useParams<string>()
+    const {userId: currentLoggedUserId} = useAuth()
+
+    const [editModeEnabled, setEditModeEnabled] = useState<boolean>(false)
 
     // Récupère les données de l'utilisateur
     const { data: user, isLoading: isUserLoading, isError: isUserError, error: userError } = useUserById(Number(id));
     
     // Récupère les plantes de l'utilisateur
     const { data: plants, isLoading: isPlantsLoading, isError: isPlantsError, error: plantsError } = usePlantsByUserId(Number(id));
+
+    useEffect(() => {
+        setEditModeEnabled(currentLoggedUserId == Number(id))
+    }, [currentLoggedUserId, id])
 
     // Gestion des erreurs utilisateur
     if (isUserError) {
@@ -30,7 +40,7 @@ export const ProfilePage: React.FC = () => {
     // Rendu du composant User une fois que toutes les données sont récupérées
     return (
         user && plants && (
-            <User user={user} plants={plants} canEdit={true} />
+            <User user={user} plants={plants} canEdit={editModeEnabled} />
         )
     );
 };

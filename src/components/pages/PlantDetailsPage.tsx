@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { usePlantById } from "@hooks/queries";
 import { Plant } from "@templates/Plant/Plant";
 
-export const PlantPage: React.FC = () => {
+export const PlantDetailsPage: React.FC = () => {
     const { id: idAsString } = useParams<{ id: string }>();
     const id = Number(idAsString);
 

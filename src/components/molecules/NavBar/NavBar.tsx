@@ -4,6 +4,7 @@ import { Avatar } from "@atoms/index";
 import './NavBar.css';
 import logo from "@assets/images/logo.png"
 import { useEffect, useRef } from "react";
+import { useAuth } from "@store/useAuth";
 
 export const NavBar: React.FC<INavBarProps> = () => {
 
@@ -16,9 +17,11 @@ export const NavBar: React.FC<INavBarProps> = () => {
             }
         };
 
-        updatePadding(); // Appliquer au premier rendu
+        updatePadding();
 
     }, []);
+
+    const {userId} = useAuth()
 
     return (
         <header className="navbar" ref={navbarRef}>
@@ -31,7 +34,7 @@ export const NavBar: React.FC<INavBarProps> = () => {
                         <Link className="navbar-navlink" to="/plants">Plantes</Link>
                     </li>
                     <li>
-                        <Link className="navbar-navlink" to="/profile">Mon profil</Link>
+                        <Link className="navbar-navlink" to={`/users/${userId}`}>Mon profil</Link>
                     </li>
                     <li>
                         <Link className="navbar-navlink" to="/settings">Paramètres</Link>
