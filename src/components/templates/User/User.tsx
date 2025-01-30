@@ -1,89 +1,15 @@
-import { Avatar, Button, Input } from "@atoms/index";
 import { IUserProps } from "./User.props";
-import { useState } from "react";
 import { PlantsList } from "@organisms/PlantsList";
+import { UserInfos } from "@organisms/UserInfos";
 import "./User.css"
-import { useUpdateUser } from "@hooks/mutations";
 
 export const User: React.FC<IUserProps> = ({ user: initUserData, canEdit, plants }) => {
-
-
-    const [user, setUser] = useState(initUserData)
-    const { firstname, lastname, age, avatar, location } = user
-
-    const [isEditingUserData, setIsEditingUserData] = useState<boolean>(false)
-
-    const { mutate: updateUser,  } = useUpdateUser();
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setUser({
-            ...user,
-            [name]: value,
-        });
-    }
 
     return (
         <main className="user-layout">
             {/* à gauche, section visualisation du profil*/}
             <div className="user-informations">
-                <Avatar imageUrl={avatar} altText="Avatar" size="large"/>
-                <Input
-                    name="firstname"
-                    value={firstname}
-                    onChange={handleChange}
-                    placeholder="Prénom"
-                    disabled={!isEditingUserData}
-                />
-                <Input
-                    name="lastname"
-                    value={lastname}
-                    onChange={handleChange}
-                    placeholder="Nom"
-                    disabled={!isEditingUserData}
-                />
-                <Input
-                    name="age"
-                    type="number"
-                    value={age}
-                    onChange={handleChange}
-                    placeholder="Age"
-                    disabled={!isEditingUserData}
-                />
-                <Input
-                    name="location"
-                    type="location"
-                    value={location}
-                    onChange={handleChange}
-                    placeholder="Localisation"
-                    disabled={!isEditingUserData}
-                />
-                {isEditingUserData
-                    ? 
-                    <>
-                        <Button 
-                            label="Annuler"
-                            onClick={() => {
-                                setUser(initUserData)
-                                setIsEditingUserData(false)
-                            }}
-                        />
-                        <Button
-                            label="Sauvegarder"
-                            onClick={() => {
-                                updateUser(user)
-                                setIsEditingUserData(false)
-                            }}
-                        />
-                    </>
-                    : canEdit && <Button
-                        label="Editer"
-                        onClick={() => {
-                            setIsEditingUserData(true)
-                        }}
-                    />
-                    
-                }
+                <UserInfos user={initUserData} canEdit={canEdit}/>
             </div>
             {/* à droite, section visualisation des plantes*/}
             <div  className="user-plants">
