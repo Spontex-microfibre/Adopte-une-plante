@@ -2,7 +2,7 @@
 
 ## Description
 
-**Adopte une Plante** est une application permettant aux utilisateurs d'adopter des plantes. Les utilisateurs peuvent naviguer à travers une collection de plantes disponibles à l'adoption, marquer leurs plantes favorites, et obtenir des informations détaillées sur chaque plante ainsi que leurs propriétaires.
+**Adopte une Plante** est une application permettant aux utilisateurs d'adopter / échanger des plantes, pour pouvoir leurs offrir une deuxième vie et plein d'amour. Les utilisateurs peuvent naviguer à travers une collection de plantes disponibles à l'adoption, marquer leurs plantes favorites, et obtenir des informations détaillées sur chaque plante ainsi que leurs propriétaires.
 
 ## Fonctionnalités
 
