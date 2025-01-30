@@ -1,4 +1,4 @@
 export interface IFavoriteButtonProps {
-    onClick: () => void
+    onClick?: () => void
     size?: string | number
 }

@@ -1,6 +1,6 @@
 import { IPlant } from "types/plant";
 
 export interface IPlantProps {
-    plant: IPlant,
+    plant: IPlant
     isFetching?: boolean
 }

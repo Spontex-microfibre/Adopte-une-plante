@@ -1,8 +1,8 @@
 export interface IInputProps {
-    type?: string,
-    name: string,
+    type?: string
+    name: string
     value: string | number
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-    placeholder: string,
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    placeholder: string
     disabled?: boolean
 }

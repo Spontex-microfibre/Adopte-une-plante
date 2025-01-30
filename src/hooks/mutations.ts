@@ -4,17 +4,15 @@ import { IUser } from "types/user";
 import { deletePlant } from "@api/plants";
 import { IPlant } from "types/plant";
 
+//Quand j'update un utilisateur, j'enlève du cache les anciennes data, et je récupère les nouvelles
 export function useUpdateUser() {
-    const queryClient = useQueryClient();
+    const queryClient = useQueryClient()
 
     return useMutation({
         mutationFn: updateUser,
-        // onSuccess: () => {
-        //     queryClient.invalidateQueries({ queryKey: ["todos"] })
-        // }
         onSuccess: (updatedUser: IUser) => {
             const userId = updatedUser.id
-            const previousUsers = queryClient.getQueryData(["userById", userId]) as IUser[];
+            const previousUsers = queryClient.getQueryData(["userById", userId]) as IUser[]
             queryClient.setQueryData(
                 ["userById", userId],
                 previousUsers?.map((previousUser) => 
@@ -25,6 +23,7 @@ export function useUpdateUser() {
     })
 }
 
+//Lorsque je supprime une plante, je veux enlever du cache les requête qui permettre de fetch les plantes, pour qu'elle se "remettent au goût du jour"
 export function useDeletePlant() {
     const queryClient = useQueryClient();
 
@@ -32,9 +31,9 @@ export function useDeletePlant() {
         mutationFn: deletePlant,
         onSuccess: (deletedPlant: IPlant) => {
             const plantId = deletedPlant.id
-            queryClient.invalidateQueries({ queryKey: ["plantById", plantId] });
-            queryClient.invalidateQueries({ queryKey: ["plants"] });
-            queryClient.invalidateQueries({ queryKey: ["plantsByUserId", Number(deletedPlant.userId)] });
+            queryClient.invalidateQueries({ queryKey: ["plantById", plantId] })
+            queryClient.invalidateQueries({ queryKey: ["plants"] })
+            queryClient.invalidateQueries({ queryKey: ["plantsByUserId", Number(deletedPlant.userId)] })
         }
     })
 }

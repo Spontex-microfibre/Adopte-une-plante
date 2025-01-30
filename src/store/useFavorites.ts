@@ -1,7 +1,7 @@
 import { IPlant } from "types/plant";
 import { create } from "zustand";
 
-interface IUseFavorites {
+export interface IUseFavorites {
     favoritesPlants: IPlant[];
     toggleFavorite: (plant: IPlant) => void
 }

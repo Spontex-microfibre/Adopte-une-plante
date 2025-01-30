@@ -1,5 +1,9 @@
-import { IAuthState } from "types/authState";
 import { create } from "zustand";
+
+export interface IAuthState {
+    userId: number | null;
+    setUserId: (id: number) => void;
+}
 
 export const useAuth = create<IAuthState>((set) => ({
     userId: 1, // Valeur par défaut de l'userId (simulé)

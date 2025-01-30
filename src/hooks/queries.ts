@@ -4,40 +4,40 @@ import { getUserById } from "@api/users";
 
 export function usePlants() {
     return useQuery({
-        queryFn: getPlants, // fonction de fetch à executer pour la query
-        queryKey: ["plants"], // on attribue un identifiant UNIQUE à cette req pour l'invalider + tard si besoin
-        staleTime: 1000 * 60 * 5, // Garde les données valides pendant 5 minutes
-        refetchOnWindowFocus: false, // Empêche le refetch automatique quand on revient sur la page
-        refetchOnMount: false, // Empêche un refetch automatique au montage si les données existent déjà
+        queryFn: getPlants,
+        queryKey: ["plants"],
+        staleTime: 1000 * 60 * 5,
+        refetchOnWindowFocus: false,
+        refetchOnMount: false,
     })
 }
 
 export function useUserById(userId: number) {
     return useQuery({
-        queryFn: () => getUserById(userId), // Fonction de fetch pour récupérer l'utilisateur par ID
-        queryKey: ["userById", userId], // Utilise l'ID de l'utilisateur pour la clef de cache
-        staleTime: 1000 * 60 * 5, // Garde les données valides pendant 5 minutes
-        refetchOnWindowFocus: false, // Empêche le refetch automatique quand on revient sur la page
-        refetchOnMount: false, // Empêche un refetch automatique au montage si les données existent déjà
+        queryFn: () => getUserById(userId),
+        queryKey: ["userById", userId],
+        staleTime: 1000 * 60 * 5,
+        refetchOnWindowFocus: false,
+        refetchOnMount: false,
     });
 }
 
 export function usePlantById(plantId: number) {
     return useQuery({
-        queryFn: () => getPlantById(plantId), // Fonction de fetch pour récupérer l'utilisateur par ID
-        queryKey: ["plantById", plantId], // Utilise l'ID de l'utilisateur pour la clef de cache
-        staleTime: 1000 * 60 * 5, // Garde les données valides pendant 5 minutes
-        refetchOnWindowFocus: false, // Empêche le refetch automatique quand on revient sur la page
-        refetchOnMount: false, // Empêche un refetch automatique au montage si les données existent déjà
+        queryFn: () => getPlantById(plantId),
+        queryKey: ["plantById", plantId],
+        staleTime: 1000 * 60 * 5,
+        refetchOnWindowFocus: false,
+        refetchOnMount: false,
     });
 }
 
 export function usePlantsByUserId(userId: number) {
     return useQuery({
-        queryFn: () => getPlantsByUserId(userId), // Fonction de fetch pour récupérer l'utilisateur par ID
-        queryKey: ["plantsByUserId", userId], // Utilise l'ID de l'utilisateur pour la clef de cache
-        staleTime: 1000 * 60 * 5, // Garde les données valides pendant 5 minutes
-        refetchOnWindowFocus: false, // Empêche le refetch automatique quand on revient sur la page
-        refetchOnMount: false, // Empêche un refetch automatique au montage si les données existent déjà
+        queryFn: () => getPlantsByUserId(userId),
+        queryKey: ["plantsByUserId", userId],
+        staleTime: 1000 * 60 * 5,
+        refetchOnWindowFocus: false,
+        refetchOnMount: false,
     });
 }

@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import "./UserInfos.css"
 import { useUpdateUser } from "@hooks/mutations";
 
+//Un même composant est utilisé pour l'affichage et la modification d'un utilisateur
+//Dans les deux cas, j'utilise des imput, mais je les disable et cache les boutons d'intéraction si je n'ai pas les droits de modif (prop : canEdit)
 export const UserInfos: React.FC<IUserInfosProps> = ({ user: initUserData, canEdit }) => {
-
 
     const [user, setUser] = useState(initUserData)
 
@@ -13,18 +14,18 @@ export const UserInfos: React.FC<IUserInfosProps> = ({ user: initUserData, canEd
 
     const [isEditingUserData, setIsEditingUserData] = useState<boolean>(false)
 
-    const { mutate: updateUser, } = useUpdateUser();
+    const { mutate: updateUser, } = useUpdateUser()
 
+    //Si mes initalData change, je recharge le contenu de mes données d'utilisateur courant
+    //Sinon, en passant d'un utilisateur à un autre, le composant ne re-render pas
+    //      parce qu'il rend les données du useState, pas celles des props
     useEffect(() => {
-        setUser(initUserData);
-    }, [initUserData]);
+        setUser(initUserData)
+    }, [initUserData])
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setUser({
-            ...user,
-            [name]: value,
-        });
+        const { name, value } = e.target
+        setUser({ ...user, [name]: value, })
     }
 
     return (

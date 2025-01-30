@@ -9,18 +9,16 @@ import { FavoriteButton } from "@molecules/FavoriteButton";
 
 export const NavBar: React.FC<INavBarProps> = () => {
 
-    const navbarRef = useRef<HTMLDivElement>(null);
-
+    //----- Adapter dynamiquement la padding du body pour prendre en compte la navbar fixed -----//
+    const navbarRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         const updatePadding = () => {
             if (navbarRef.current) {
                 document.body.style.paddingTop = `${navbarRef.current.offsetHeight}px`;
             }
-        };
-
-        updatePadding();
-
-    }, []);
+        }
+        updatePadding()
+    }, [])
 
     const { userId } = useAuth()
 
@@ -37,6 +35,7 @@ export const NavBar: React.FC<INavBarProps> = () => {
                             <Link className="navbar-navlink" to="/plants">Plantes</Link>
                         </li>
                         <li>
+                            {/* Pour accéder à mon profil, je vais sur l'utilisateur qui porte mon id, le composant chargé de rendre la page utilisateurs me donnera les droits de modifications*/}
                             <Link className="navbar-navlink" to={`/users/${userId}`}>Mon profil</Link>
                         </li>
                         <li>
@@ -48,7 +47,7 @@ export const NavBar: React.FC<INavBarProps> = () => {
 
             <div className="navbar-right">
                 <Link to="/plants/favorites">
-                    <FavoriteButton size="40px" onClick={() => { console.log("display favorites") }} />
+                    <FavoriteButton size="40px" onClick={() => {}} />
                 </Link>
             </div>
         </header>

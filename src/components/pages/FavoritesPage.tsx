@@ -7,6 +7,7 @@ export const FavoritesPage: React.FC = () => {
 
     return (
         <>
+            {/* Créer un template qui s'occupe du titre et le layout, et appeler le template ici*/}
             <h1>Vos plantes préférées :</h1>
             <PlantsList plants={favoritesPlants}/>
         </>

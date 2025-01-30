@@ -1,3 +1,1 @@
-export interface INavBarProps {
-    
-}
+export interface INavBarProps {}

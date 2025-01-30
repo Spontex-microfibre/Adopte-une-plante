@@ -1,4 +1,5 @@
 import { IInputProps } from "./Input.props";
+import "./Input.css"
 
 export const Input: React.FC<IInputProps> = ({value, onChange, type = "text", placeholder, name, disabled}) => {
 

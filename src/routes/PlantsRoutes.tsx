@@ -8,7 +8,7 @@ export const PlantsRoutes: React.FC = () => {
     <Routes>
       <Route index element={<PlantsPage />} />
       <Route path=":id" element={<PlantDetailsPage />} />
-      {/* <Route path="create" element={<p>PlantForm</p>} /> */}
+      <Route path="create" element={<p>PlantForm</p>} />
       <Route path="edit/:id" element={<p>PlantForm</p>} />
       <Route path="favorites" element={<FavoritesPage />} />
     </Routes>

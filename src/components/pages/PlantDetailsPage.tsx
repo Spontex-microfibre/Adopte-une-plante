@@ -4,19 +4,19 @@ import { Plant } from "@templates/Plant/Plant";
 import { IPlant } from "types/plant";
 
 export const PlantDetailsPage: React.FC = () => {
-    const { id: idAsString } = useParams<{ id: string }>();
-    const id = Number(idAsString);
 
-    const navigate = useNavigate();
+    const id = Number(useParams<{ id: string }>().id ?? 0)
 
+    const navigate = useNavigate()
 
-    const { data: plant, isFetching, isError, error } = usePlantById(id);
+    const { data: plant, isFetching, isError, error } = usePlantById(id)
 
     if (isError) {
-        console.error(String(error));
-        navigate("/");
-        return null;
+        console.error(String(error))
+        navigate("/")
+        return null //stopper immédiatement le rendu du composant, parce qu'il ne sera pas affiché dans tout les cas et react continue de le rendre
     }
 
-    return <Plant plant={plant ?? {} as IPlant} isFetching={isFetching}/>;
+    //cast d'un {} as IPlant, parce que le composant n'accepte pas un potentiel undefined, bizarre mais j'ai trouvé que ça
+    return <Plant plant={plant ?? {} as IPlant} isFetching={isFetching}/>
 };

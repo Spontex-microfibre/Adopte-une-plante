@@ -5,7 +5,6 @@ export const UsersRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path=":id" element={<UserDetailsPage />} />
-      <Route path="create" element={<p>UserForm </p>} />
     </Routes>
   );
 }
