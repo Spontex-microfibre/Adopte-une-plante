@@ -26,27 +26,27 @@ export const NavBar: React.FC<INavBarProps> = () => {
         <header className="navbar" ref={navbarRef}>
 
             <div className="navbar-left">
-                <Link className="navbar-navlink" to="/">
+                <Link className="navbar-navlink" to="/Adopte-une-plante/">
                     <Avatar imageUrl={logo} altText="Logo" size="large" />
                 </Link>
                 <nav>
                     <ul className="navbar-navlist">
                         <li>
-                            <Link className="navbar-navlink" to="/plants">Plantes</Link>
+                            <Link className="navbar-navlink" to="/Adopte-une-plante/plants">Plantes</Link>
                         </li>
                         <li>
                             {/* Pour accéder à mon profil, je vais sur l'utilisateur qui porte mon id, le composant chargé de rendre la page utilisateurs me donnera les droits de modifications*/}
-                            <Link className="navbar-navlink" to={`/users/${userId}`}>Mon profil</Link>
+                            <Link className="navbar-navlink" to={`/Adopte-une-plante/users/${userId}`}>Mon profil</Link>
                         </li>
                         <li>
-                            <Link className="navbar-navlink" to="/settings">Paramètres</Link>
+                            <Link className="navbar-navlink" to="/Adopte-une-plante/settings">Paramètres</Link>
                         </li>
                     </ul>
                 </nav>
             </div>
 
             <div className="navbar-right">
-                <Link to="/plants/favorites">
+                <Link to="/Adopte-une-plante/plants/favorites">
                     <IconButton Icon={FaHeart} color="red" size={40} onClick={() => {}}/>
                 </Link>
             </div>

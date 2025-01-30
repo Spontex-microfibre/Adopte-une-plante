@@ -9,9 +9,9 @@ export const AppRoutes = () => {
         <Router>
             <NavBar />
             <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/users/*" element={<UsersRoutes />} />
-                <Route path="/plants/*" element={<PlantsRoutes />} />
+                <Route path="/Adopte-une-plante/" element={<HomePage />} />
+                <Route path="/Adopte-une-plante/users/*" element={<UsersRoutes />} />
+                <Route path="/Adopte-une-plante/plants/*" element={<PlantsRoutes />} />
             </Routes>
         </Router>
     );
