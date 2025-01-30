@@ -33,7 +33,7 @@
       "@api/*": ["api/*"],
       "@hooks/*": ["hooks/*"],
       "@types/*": ["types/*"],
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["assets/*"],
     }
   },
   "include": ["src"]
